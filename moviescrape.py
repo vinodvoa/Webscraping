@@ -30,13 +30,13 @@ for pages in range(1, 11):
         movie = div.find('a', class_='name')
 
         # movie title
-        link = movie.get('href')
         ws.cell(row, col).value = movie.string
         col += 1
 
         # movie link
-        ws.cell(row, col).value = 'https://ffmovies.ru' + link
+        link = movie.get('href')
         movielink = 'https://ffmovies.ru' + link
+        ws.cell(row, col).value = movielink
         links.append(movielink)
         col += 1
         # print(movie.string, link)
